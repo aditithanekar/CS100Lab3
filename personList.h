@@ -1,6 +1,9 @@
 #ifndef __PERSONLIST_H__
 #define __PERSONLIST_H__
 #include "person.h"
+#include <string>
+
+using namespace std;
 
 class PersonList{
     private:

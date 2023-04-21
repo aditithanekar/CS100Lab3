@@ -7,7 +7,7 @@ using std::endl;
 
 Person::Person(const char *name_, Person* father_, Person* mother_){
     name = new char[strlen(name_)];
-    strcpy(name, name_);
+    // strcpy(name, name_);
     father = father_;
     mother = mother_;
     capacity = 1;
@@ -16,7 +16,15 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
 }
 
 Person::~Person(){
-    delete children;
+    for(int i = numChildren; i >= 0; --i){
+        delete children[i];
+    }
+    // for(int i = strlen(name); i >= 0; --i){
+    //     delete name[i];
+    // }
+    delete[] name;
+    //delete[] name_;
+    // delete[] children;
 }
 
 void Person::addChild(Person *newChild){
