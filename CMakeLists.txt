@@ -3,3 +3,7 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 ADD_EXECUTABLE(debug
 	debug.cpp
 )
+
+ADD_EXECUTABLE(example1
+	simple.cpp
+)
