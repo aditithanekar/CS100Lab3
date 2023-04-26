@@ -12,10 +12,10 @@ PersonList::PersonList(){
 }
 
 PersonList::~PersonList(){
-    for(int i = numPeople; i >= 0; --i){
+    for(int i = numPeople-1; i >= 0; --i){
         delete theList[i];
     }
-    //delete[] theList;
+    delete[] theList;
 }
 
 void PersonList::addPerson(const char* child_name, const char* father_name, const char* mother_name){
@@ -51,8 +51,9 @@ void PersonList::addPerson(const char* child_name, const char* father_name, cons
 }
 
 void PersonList::insertIntoList(Person *newPerson){
-    if(numPeople == capacity) expand(&theList, &capacity);
-
+    if(numPeople == capacity) {
+        expand(&theList, &capacity);
+    }
     theList[numPeople++] = newPerson;
 }
 
